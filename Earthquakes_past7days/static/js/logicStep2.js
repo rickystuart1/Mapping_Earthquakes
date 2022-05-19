@@ -65,7 +65,3 @@ d3.json(earthquake7Days).then(function(data) {
         style: styleInfo
     }).addTo(map);
 });
-
-
-
-
