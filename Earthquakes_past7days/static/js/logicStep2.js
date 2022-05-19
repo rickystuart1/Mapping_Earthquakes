@@ -38,7 +38,7 @@ function styleInfo(feature) {
         fillOpacity: 1,
         fillColor: "#ffae42",
         color: "#000000",
-        radius: getRadius(),
+        radius: getRadius(feature.properties.mag),
         stroke: true,
         weight: .5
     };
@@ -47,11 +47,10 @@ function styleInfo(feature) {
 // This function determines the radius of the earthquake marker based on its magnitude. Earthquakes with a magnitude of 0 will be plotted with a radius of 1.
 function getRadius(magnitude) {
     if (magnitude === 0) {
-        return 1;
+      return 1;
     }
-
     return magnitude * 4;
-}
+  };
 
 // Grabbing our GeoJSON data
 d3.json(earthquake7Days).then(function(data) {
