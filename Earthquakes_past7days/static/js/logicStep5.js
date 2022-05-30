@@ -12,10 +12,17 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
     accessToken: API_key
 });
 
+let night = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/navigation-night-v1/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        accessToken: API_key
+    });
+
 // Create base layer that holds both maps
 let baseMaps = {
     "Streets": streets,
-    "Satellite": satellite
+    "Satellite": satellite,
+    "Night": night
 };
 
 // Create the earthquake layer
